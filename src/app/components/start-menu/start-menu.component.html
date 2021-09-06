@@ -1,0 +1,35 @@
+
+<div>
+    <p style="position: fixed; margin-left: 10px; font-weight: bold;">{{topLeft}}</p>
+</div>
+
+<div>
+    <p style="position: fixed; margin-left: 90%; font-weight: bold;">{{topRight}}</p>
+</div>
+
+<div class="start-menu-page">
+
+    <h1 style="font-weight: bolder;">HOUSE OF DREAMS</h1>
+    
+    <div>
+    <button (click)="onClickNormal()">Enter the House of Dreams</button>
+    </div>
+    
+    <div *ngIf="endlessUnlocked">
+    <button (click)="onClickEndless()">Endless Mode</button>
+    </div>
+    
+    <div>
+    <button (click)="goToInfo()">Info</button>
+    </div>
+    
+</div>
+
+<div>
+    <p style="position: fixed; margin-left: 90%; font-weight: bold;padding-top: 45vh;">{{botLeft}}</p>
+</div>
+
+<div>
+    <p style="position: fixed; margin-left: 10px; font-weight: bold;padding-top: 45vh;">{{botRight}}</p>
+</div>
+

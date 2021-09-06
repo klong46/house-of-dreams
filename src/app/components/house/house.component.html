@@ -1,0 +1,143 @@
+<div *ngIf="!gameOver">
+
+<div *ngIf="gameMode && !gameOver">
+  <p style="margin-left: 10px; font-weight: bold;">Dream {{rooms}}</p>
+</div>
+
+<div *ngIf="loadingWord">
+    <p>loading...</p>
+</div>
+
+<h1 style="font-size: 40pt;">{{randomWord}}</h1>
+
+<div *ngIf="!(dream.output && entityAnalysis && sentimentAnalysis)">
+<div *ngIf="randomWord">
+<p style="font-family: 'Times New Roman', Times, serif;">What does this make you think of?</p>
+</div>
+
+<div *ngIf="!loadingWord">
+<form #f="ngForm">
+    <input placeholder="Enter your thoughts" autocomplete="off" [(ngModel)]="thoughts" [ngModelOptions]="{standalone: true}">
+    <input type="button" (click)="submitThoughts()" value="continue">
+</form>
+</div>
+</div>
+
+<div *ngIf="loadingDream">
+    <p>loading...</p>
+</div>
+
+<p style="font-family: 'Times New Roman', 
+Times, serif; 
+text-align: left; 
+margin-left: 20px; 
+word-wrap: normal; 
+font-size: 18pt; 
+padding-left: 30px;
+padding-right: 40px;">{{dream.output}}</p>
+
+
+
+
+<div *ngIf="dream.output && entityAnalysis && sentimentAnalysis">
+
+<div  class="inline">
+
+<p>After reading the dream...</p>
+
+<div *ngIf="!answersChecked">
+<p style="font-family: 'Times New Roman', Times, serif;">How do you feel about {{entityOneName}}?</p>
+<mat-slider class="first-slider"
+  (change)="updateSlider1($event)"
+  thumbLabel
+  tickInterval="1"
+  step="1"
+  min="-10"
+  max="10"
+  value="0"
+  aria-label="units">
+</mat-slider>
+</div>
+
+<div *ngIf="answersChecked" class="inline">
+  <p>true dream rating for {{entityOneName}}: {{entityOneSentiment}}</p>
+</div>
+
+<div *ngIf="!entityTwoEmpty && !answersChecked">
+<p style="font-family: 'Times New Roman', Times, serif;">How do you feel about {{entityTwoName}}?</p>
+<mat-slider class="second-slider"
+  (change)="updateSlider2($event)"
+  thumbLabel
+  tickInterval="1"
+  step="1"
+  min="-10"
+  max="10"
+  value="0"
+  aria-label="units">
+</mat-slider>
+</div>
+
+<div *ngIf="answersChecked && !entityTwoEmpty">
+  <p>true dream rating for {{entityTwoName}}: {{entityTwoSentiment}}</p>
+</div>
+
+<div *ngIf="!answersChecked" class="whole-dream">
+
+<p style="font-family: 'Times New Roman', Times, serif;">How do you feel about the dream as a whole?</p>
+
+<div class="inline">
+  <p>NIGHTMARE</p>
+</div>
+
+<mat-slider class="third-slider"
+  (change)="updateSlider3($event)"
+  thumbLabel
+  tickInterval="1"
+  step="1"
+  min="-10"
+  max="10"
+  value="0"
+  aria-label="units">
+</mat-slider>
+
+<div class="inline">
+  <p>FANTASY</p>
+</div>
+
+</div>
+
+<div *ngIf="answersChecked" style="margin-top: 35px;">
+  <p>true overall dream rating: {{overallSentiment}}</p>
+</div>
+
+<div *ngIf="!answersChecked">
+  <button (click)="checkAnswers()">compare answers</button>
+</div>
+
+<div *ngIf="answersChecked">
+<button (click)="submitDream()">next dream</button>
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+<div *ngIf="gameOver">
+    <h1>Your dream score was: {{overallScore}}</h1>
+    <p>Your dreams had a average true rating of {{dreamAverage}}</p>
+    <p>Congratulations! Endless mode is now available</p>
+    <button (click)="backToMenu()">back to home</button>
+</div>
+
+<div *ngIf="unlockPassword">
+  <p>You scored 90 or above! the password is: showsecretstuff</p>
+</div>
+
+
+
+
+

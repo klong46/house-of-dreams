@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "house-of-dreams": {
+      "hosting": {
+        "house-of-dreams": [
+          "house-of-dreams"
+        ]
+      }
+    }
+  }
+}

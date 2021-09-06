@@ -1,0 +1,47 @@
+mat-slider {
+    width: 500px;
+}
+
+.inline{
+    display: inline-block;
+}
+
+.whole-dream{
+    padding-inline-end: 30px;
+}
+
+:host ::ng-deep .first-slider .mat-slider-thumb {
+    background-color: rgb(36, 153, 0);
+  }
+  
+  :host ::ng-deep .first-slider .mat-slider-thumb-label {
+    background-color: rgb(36, 153, 0);
+  }
+  
+  :host ::ng-deep .first-slider .mat-slider-track-fill {
+    background-color: rgb(36, 153, 0);
+  }
+
+  :host ::ng-deep .second-slider .mat-slider-thumb {
+    background-color: rgb(255, 0, 0);
+  }
+  
+  :host ::ng-deep .second-slider .mat-slider-thumb-label {
+    background-color: rgb(255, 0, 0);
+  }
+  
+  :host ::ng-deep .second-slider .mat-slider-track-fill {
+    background-color: rgb(255, 0, 0);
+  }
+
+  :host ::ng-deep .third-slider .mat-slider-thumb {
+    background-color: rgb(75, 0, 161);
+  }
+  
+  :host ::ng-deep .third-slider .mat-slider-thumb-label {
+    background-color: rgb(75, 0, 161);
+  }
+  
+  :host ::ng-deep .third-slider .mat-slider-track-fill {
+    background-color: rgb(75, 0, 161);
+  }

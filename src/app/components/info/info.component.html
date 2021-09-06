@@ -1,0 +1,18 @@
+<p>@author Kyle Long</p>
+
+<p>the closer your dream analysis is to reality, the higher your score</p>
+
+<p>score 90 or higher to unlock secret stuff...</p>
+
+<input type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}">
+<input type="submit" (click)="secretInfo()" value="show secret stuff">
+
+<div *ngIf="showSecretInfo" style="text-align: left; margin-left: 300px;">
+<p style="font-weight: bold;">How the House of Dreams works:</p>
+<p></p>
+<a href="https://random-word-api.herokuapp.com" target="_blank">- random words generated from this random word API</a>
+<p></p>
+<a href="https://deepai.org" target="_blank">- dream generated from deep AI text generator API</a>
+<p></p>
+<a href="https://cloud.google.com/natural-language/docs/basics" target="_blank">- dream analysis generated from Google Natural Language API</a>
+</div>
